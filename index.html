@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quest 3 WebXR · Three.js + Rapier</title>
+  <link rel="stylesheet" href="style.css" />
+
+  <!--
+    Import map: lets us write clean ESM imports ("three", "rapier3d")
+    in main.js instead of long CDN URLs. Quest 3 Browser (Chromium-based)
+    supports import maps natively.
+  -->
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://unpkg.com/three@0.165.0/build/three.module.js",
+        "three/addons/": "https://unpkg.com/three@0.165.0/examples/jsm/",
+        "rapier3d": "https://cdn.skypack.dev/@dimforge/rapier3d-compat@0.14.0"
+      }
+    }
+  </script>
+</head>
+<body>
+  <div id="overlay">
+    <h1>WebXR · Three.js + Rapier</h1>
+    <p>Put on your Quest 3 and click "Enter VR" below.</p>
+    <ul>
+      <li><b>Right thumbstick</b> — move sphere on X / Y axes</li>
+      <li><b>Right controller button (A/X)</b> — toggle sphere physics ON/OFF</li>
+      <li><b>Right controller button (B/Y)</b> — teleport into the bridge (press again to return)</li>
+      <li><b>Left thumbstick</b> — move sphere on Z axis</li>
+      <li><b>Left trigger</b> — accelerator multiplier for Z movement</li>
+    </ul>
+  </div>
+
+  <script type="module" src="main.js"></script>
+</body>
+</html>
